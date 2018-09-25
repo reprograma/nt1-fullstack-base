@@ -1,0 +1,168 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício 6</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <form action="#" class="form" id="form-cadastro">
+
+        <div>
+            <label for="texto">Usuário</label>
+            <input type="text" name="texto" class="half-col">
+        </div>
+
+        <div>
+            <label for="texto">Senha</label>
+            <input type="password" name="texto" class="half-col" id="senha">
+            <input type="button" onclick="funcaoQueChecaSenha()" value="Checar Senha">
+        </div>
+
+        <div>
+            <label for="texto">Escolha uma ou múltiplas opções</label>
+            <div class="half-col">
+                <input type="checkbox" name="mulher" value="Mulher"> Mulher <br>
+                <input type="checkbox" name="poderosa" value="Poderosa"> Poderosa
+                <br>
+                <input type="checkbox" name="linda" value="Linda"> Linda
+                <br>
+                <input type="checkbox" name="maravilhosa" value="Maravilhosa"> Maravilhosa
+            </div>
+            <input type="button" onclick="funcaoQueChecaCheckBox()" value="Checar CheckBox">
+        </div>
+
+        <div>
+            <label for="texto">Escolha uma opção</label>
+            <div class="half-col">
+                <input type="radio" name="poder" value="Força"> Super força <br>
+                <input type="radio" name="poder" value="Invisivel"> Ser invisível
+                <br>
+                <input type="radio" name="poder" value="Mentes"> Ler mentes
+                <br>
+                <input type="radio" name="poder" value="Velocidade"> Super velocidade
+            </div>
+            <input type="button" onclick="funcaoQueChecaRadio()" value="Checar Radio">
+        </div>
+
+        <div>
+            <label for="texto">Selecione um tópico</label>
+            <select name="dropdown" id="select-option">
+                <option value="1">Deixar meu site mais bonito</option>
+                <option value="2">Acabar com o patriarcado</option>
+                <option value="3">Fazer a revolução feminista</option>
+            </select>
+            <input type="button" onclick="funcaoQueChecaSelect()" value="Checar Select">
+        </div>
+
+        <div>
+            <label for="texto">Escolha um valor</label>
+            <input type="number" name="valor" id="valorEhNulo">
+            <input type="button" onclick="funcaoQueChecaValor()" value="Checar Valor">
+        </div>
+
+        <div>
+            <label for="texto">Comentário</label>
+            <textarea rows="4" col="50" class="half-col"></textarea>
+        </div>
+
+        <div>
+            <div class="half-col"></div>
+            <button class="btn btn_grey">Limpar</button>
+            <input class="btn btn_purple" type="submit" value="Enviar" id="salvarFormulario">
+        </div>
+    </form>
+
+    <script type="text/javascript">
+
+        var salvarBotao = document.querySelector("#salvarFormulario");
+        salvarBotao.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            alert("Passe as funções para cá.");
+
+        });
+
+        function funcaoQueChecaCheckBox() {
+
+            var inputs = document.getElementsByTagName("input"); //or document.forms[0].elements;
+            var cbs = []; //will contain all checkboxes
+            var checked = []; //will contain all checked checkboxes
+            for (var i = 0; i < inputs.length; i++) {
+                if (inputs[i].type == "checkbox") {
+                    cbs.push(inputs[i]);
+                    if (inputs[i].checked) {
+                        checked.push(inputs[i]);
+                    }
+                }
+            }
+
+            console.log(cbs);
+            console.log(checked);
+
+            var nbCbs = cbs.length; //number of checkboxes
+            var nbChecked = checked.length; //number of checked checkboxe
+
+            console.log(nbCbs);
+            console.log(nbChecked);
+
+        }
+
+        function funcaoQueChecaRadio() {
+            var radios = document.getElementsByName('poder');
+
+            for (var i = 0; i < radios.length; i++) {
+                if (radios[i].checked) {
+                    alert(radios[i].value);
+                    break;
+                }
+            }
+        }
+
+        // 2
+        function funcaoQueChecaValor() {
+            // var valorEhNulo = document.getElementById("valorEhNulo");
+            var valorEhNulo = document.querySelector("#valorEhNulo");
+            if (valorEhNulo.value == '' || valorEhNulo.value == null) {
+                // console.log("Ok!");
+                alert("Not Ok.")
+            } else {
+                alert("Ok!")
+                // console.log("Not Ok.");
+            }
+        }
+
+        // 1
+        function funcaoQueChecaSenha() {
+            var senha = document.querySelector("#senha").value;
+            console.log(senha);
+            if (senha.length < 3) {
+                // console.log("Senha Inválida");
+                alert("Not Ok.")
+            } else {
+                // console.log("Senha Válida");
+                alert("Ok!")
+            }
+        }
+
+        // 3
+        function funcaoQueChecaSelect() {
+            var selecionado = document.querySelector("#select-option");
+            var campoSelecionado = selecionado.options[selecionado.selectedIndex].value;
+            var campoSelecionadoTexto = selecionado.options[selecionado.selectedIndex].text;
+            console.log(campoSelecionado);
+            console.log(campoSelecionadoTexto);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

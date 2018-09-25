@@ -1,0 +1,111 @@
+/* GERAL */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-image: url('../img/computador.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Inconsolata','Lato', Arial, Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* FONTS */
+h1 {
+    color: #4F4F4F;
+    font-size: 35px;
+}
+
+h2 {
+    color: #bfbfbf;   
+    font-size: 25px;
+}
+
+/* SEÇÃO SOBRE */
+.secao-sobre {
+    background-color: white;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.sobre-conteudo__img {
+    margin-top: 80px;
+    border-radius: 50%;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+}  
+    
+.sobre-conteudo {
+    /* font-family: 'Lato', sans-serif; */
+    text-align: center;
+}
+
+.sobre-conteudo__redes-sociais {
+    text-align: center;
+    margin-top: 100px;
+    padding-bottom: 90px;
+}
+
+.sobre-conteudo__redes-sociais img {
+    width: 87px;
+    height: 86px;
+    margin-left: 40px;
+    -webkit-filter: grayscale(80%);
+    filter: grayscale(80%);
+}
+
+.sobre-conteudo__redes-sociais img:hover {
+    -webkit-filter: grayscale(0%);
+    filter: grayscale(0%);
+    /* filter: brightness(0) invert(1); */
+}
+
+ /* Extra small devices (phones, 600px and down) */
+ @media only screen and (max-width: 600px) {
+    .secao-sobre {
+        background-color: #6699ff;
+    }
+    .sobre-conteudo__img {
+        width: 50%;
+    }
+ }
+
+ /* Small devices (portrait tablets and large phones, 600px and up) */
+ @media only screen and (min-width: 600px) {
+    .secao-sobre {
+        background-color: #00ffcc;
+    }
+ }
+ 
+ /* Medium devices (landscape tablets, 768px and up) */
+ @media only screen and (min-width: 768px) {
+    .secao-sobre {
+        background-color: #9999ff;
+    }
+ }
+ 
+ /* Large devices (laptops/desktops, 992px and up) */
+ @media only screen and (min-width: 992px) {
+    .secao-sobre {
+        background-color: #ffffcc;
+    }
+ }
+ 
+ /* Extra large devices (large laptops and desktops, 1200px and up) */
+ @media only screen and (min-width: 1200px) {
+    .secao-sobre {
+        background-color: #FFF;
+    }
+ } 
+
+
+
+
